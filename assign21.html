@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assign 21 DOM</title>
+  </head>
+  <body> 
+  <!-- <body onbeforeunload> -->
+    <!-- que 1 -->
+    <h2 id="text1"></h2> <br>
+
+    <!-- que 3 -->
+    <div>
+      input Number1 : <input type="text" id="num1" /> input Number2 :
+      <input type="text" id="num2" />
+      <button onclick="addNums()">ADD</button>
+    </div> <br>
+
+    <!-- que 4 -->
+    <p class="text">Hello World!</p> <br>
+
+    <!-- que 5 -->
+    <button id="btn1" onclick="btnCall()"> console on click</button> <br> <br>
+
+    <!-- que 6 -->
+
+    <h2> que 7</h2>
+
+    <!-- que 9 -->
+    <h5 id="que9"> que 9</h5>
+
+
+
+    </div>
+
+    <!-- que 11 -->
+    <form id="form1" onsubmit="getFormValue()">
+      Name: <input type="text" id="name" /> <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      "use strict";
+      // 1.
+      document.getElementById("text1").innerHTML = "Hello World";
+
+      // 2.
+      document.getElementById("text1").style.color = "red";
+      document.getElementById("text1").style.fontWeight = "bold";
+      document.getElementById("text1").style.textTransform = "uppercase";
+
+      // 3.
+      function addNums() {
+        let n1 = document.getElementById("num1").value;
+        let n2 = document.getElementById("num2").value;
+        let result = Number(n1) + Number(n2);
+        console.log(result);
+      }
+
+      // 4.
+      document.getElementsByClassName("text")[0].innerHTML = "Hi JS DOM!";
+
+      // 5.
+      function btnCall() {
+         console.log("hello")
+      }
+      
+      // 6.
+      // function myFunction() {
+      //  return "Write something clever here...";
+      //  }
+        
+       // 7.
+       let nodes = document.getElementsByTagName("h2");
+       console.log(nodes);
+       for(let i=0;i<nodes.length;i++){
+        nodes[i].style.color = "purple";
+       }
+       
+       // 8.
+       const para = document.createElement("h4");
+       para.innerText = "h4 heading";
+       document.body.appendChild(para);
+       
+       // 9.
+       const ele = document.getElementById("que9");
+       ele.remove();
+
+       // 10.
+       let p_tag = document.getElementsByTagName("p");
+       console.log("no of p tag=",p_tag.length)
+
+
+      // 11.
+      function getFormValue(e) {
+        let form = document.getElementById("form1");
+        console.log(form.children.name);
+        e.preventDefault();
+      }
+    </script>
+  </body>
+</html>
